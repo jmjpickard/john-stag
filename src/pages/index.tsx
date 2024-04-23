@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { Button } from "~/components/ui/button";
@@ -48,6 +47,7 @@ const NewGame = ({ onClick }: Props) => {
         title: "Game joined!",
         description: "Let's get fishing!",
         onAnimationEnd: () => {
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           router.push(`/game/${data.game.id}?playerId=${data.player.id}`);
         },
       });
@@ -126,6 +126,7 @@ const JoinGame = ({ onClick }: Props) => {
         title: "Game joined!",
         description: "Let's get fishing!",
         onAnimationEnd: () => {
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           router.push(`/game/${data.game.id}?playerId=${data.player.id}`);
         },
       });
@@ -193,7 +194,7 @@ export default function Home() {
   return (
     <>
       <main className="font-arcade flex min-h-screen flex-col items-center justify-center gap-10 text-3xl">
-        <h1>John's Hookers</h1>
+        <h1>John&apos;s Hookers</h1>
         {!join && !newGame && (
           <div className="flex flex-row gap-5">
             <Button variant="destructive" onClick={() => setJoin(true)}>

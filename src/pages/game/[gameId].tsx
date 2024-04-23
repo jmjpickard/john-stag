@@ -1,10 +1,7 @@
-import { Head } from "next/document";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { Button } from "~/components/ui/button";
 import { Toaster } from "~/components/ui/toaster";
 import { useToast } from "~/components/ui/use-toast";
-import TroutSVG from "~/svg/Trout";
 import { api } from "~/utils/api";
 
 const Game = () => {
@@ -25,6 +22,7 @@ const Game = () => {
         description: "Please wait a moment",
       }),
     onSuccess: () => {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       refetch();
       toast({
         title: "Points added!",

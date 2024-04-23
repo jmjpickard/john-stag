@@ -1,5 +1,4 @@
 import { type AppType } from "next/app";
-import Head from "next/head";
 import { Inter } from "next/font/google";
 
 import { api } from "~/utils/api";
