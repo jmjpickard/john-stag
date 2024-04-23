@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  database:
+    image: postgres:14.2
+    restart: always
+    expose:
+      - "47535"
+    ports:
+      - "47535:47535"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - the-hut-pgsql:/var/lib/postgresql/data
+    networks:
+      - skynet
+    command: -p 47535
+volumes:
+  the-hut-pgsql:
+    driver: local
+networks:
+  skynet:
+    name: johns-stag
